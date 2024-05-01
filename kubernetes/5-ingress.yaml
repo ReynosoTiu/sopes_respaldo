@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: jlixsopes1p2
+  name: external-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /insert
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /client
+        pathType: Prefix
+        backend:
+          service:
+            name: client
+            port:
+              number: 8080
