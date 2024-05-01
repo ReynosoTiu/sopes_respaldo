@@ -51,7 +51,7 @@ export default defineComponent({
   methods: {
     async fetchLogs() {
       try {
-        const response = await fetch('/logs')
+        const response = await fetch('https://node-proyecto2-xyprkqxjba-uc.a.run.app/logs')
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
